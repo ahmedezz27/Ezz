@@ -105,7 +105,13 @@ ul {
   }
 }
 
-.header .container .main-nav>li>a {
+.header .container .main-nav > li:hover .mega-menu {
+  top: calc(100% + 1px);
+  opacity: 1;
+  z-index: 100;
+}
+
+.header .container .main-nav > li > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,14 +124,14 @@ ul {
 }
 
 @media (max-width: 767px) {
-  .header .container .main-nav>li>a {
+  .header .container .main-nav > li > a {
     padding: 10px;
     font-size: 14px;
     height: 40px;
   }
 }
 
-.header .container .main-nav>li>a::before {
+.header .container .main-nav > li > a::before {
   content: "";
   position: absolute;
   background-color: var(--main-color);
@@ -136,13 +142,93 @@ ul {
   transition: var(--main-transition);
 }
 
-.header .container .main-nav>li>a:hover {
+.header .container .main-nav > li > a:hover {
   color: var(--main-color);
   background-color: #fafafa;
 }
 
-.header .container .main-nav>li>a:hover::before {
+.header .container .main-nav > li > a:hover::before {
   left: 0;
+}
+
+.header .mega-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 50px);
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  opacity: 0;
+  display: flex;
+  gap: 40px;
+  transition: top var(--main-transition), opacity var(--main-transition);
+}
+
+@media (max-width: 767px) {
+  .header .mega-menu {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px;
+  }
+}
+
+.header .mega-menu .image img {
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  .header .mega-menu .image {
+    display: none;
+  }
+}
+
+.header .mega-menu .links {
+  min-width: 250px;
+  flex: 1;
+}
+
+.header .mega-menu .links li {
+  position: relative;
+}
+
+.header .mega-menu .links li:not(:last-child) {
+  border-bottom: 1px solid #e9e6e6;
+}
+
+@media (max-width: 767px) {
+  .header .mega-menu .links li {
+    border-bottom: 1px solid #e9e6e6;
+  }
+}
+
+.header .mega-menu .links li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fafafa;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+
+.header .mega-menu .links li:hover:before {
+  width: 100%;
+}
+
+.header .mega-menu .links li a {
+  color: var(--main-color);
+  padding: 15px;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header .mega-menu .links li a i {
+  margin-right: 10px;
 }
 
 /* End Header section */
@@ -263,7 +349,6 @@ ul {
 }
 
 @keyframes bouncing {
-
   0%,
   10%,
   20%,
