@@ -654,6 +654,59 @@ ul {
 
 /* End Features section */
 
+/* Start Testimonials Section */
+
+.testimonials {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+}
+
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.testimonials .container .box {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  position: relative;
+}
+
+.testimonials .container .box img {
+  position: absolute;
+  top: -50px;
+  right: -10px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid var(--section-background);
+}
+
+.testimonials .container .box h3 {
+  margin: 0 0 10px;
+}
+
+.testimonials .container .box .title {
+  color: #777;
+  margin: 0 0 10px;
+  display: block;
+}
+
+.testimonials .container .box p {
+  color: #777;
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+.testimonials .container .box .filled {
+  color: #ffc107;
+}
+
+/* End Testimonials Section */
+
 /* Start Animation */
 
 @keyframes up-and-down {
