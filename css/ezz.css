@@ -1527,6 +1527,117 @@ ul {
 
 /* End Stats Aection */
 
+/* Start Discount Section */
+
+.discount {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.discount .image {
+  background-image: url(../imgs/discount-background1.jpg);
+  background-size: cover;
+  flex-basis: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  animation: change-background 10s linear infinite;
+}
+
+.discount .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 135, 224, 0.97);
+  z-index: -1;
+}
+
+@media (max-width: 991px) {
+  .discount .image {
+    flex-basis: 100%;
+  }
+}
+
+.discount .content {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.discount .content h2 {
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.discount .content p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.discount .content img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.discount .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+@media (max-width: 991px) {
+  .discount .form {
+    flex-basis: 100%;
+  }
+}
+
+.discount .form .input {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  caret-color: var(--main-color);
+}
+
+.discount .form textarea.input {
+  resize: none;
+  height: 200px;
+}
+
+.discount .form .input:focus {
+  outline: none;
+}
+
+.discount .form [type="submit"] {
+  display: block;
+  padding: 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--main-transition);
+  width: 100%;
+  border: none;
+}
+
+.discount .form [type="submit"]:hover {
+  background-color: var(--main-color-alt);
+}
+
+/* End Discount Section */
+
 /* Start Animation */
 
 @keyframes up-and-down {
@@ -1605,6 +1716,20 @@ ul {
     opacity: 0;
     width: 200%;
     height: 200%;
+  }
+}
+
+@keyframes change-background {
+  0% {
+    background-image: url(../imgs/discount-background1.jpg);
+  }
+
+  50% {
+    background-image: url(../imgs/discount-background2.jpg);
+  }
+
+  100% {
+    background-image: url(../imgs/discount-background1.jpg);
   }
 }
 
